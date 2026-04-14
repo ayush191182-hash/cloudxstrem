@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CloudXstrem</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">Loading CloudXstrem...</div>
+
+<!-- GAME LOADER -->
+<div id="gameLoader" style="display:none;">🎮 Launching Game...</div>
+
+<!-- LOGIN -->
+<div id="loginScreen">
+  <h2>Login</h2>
+  <input id="username" placeholder="Username">
+  <input id="password" type="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- HOME -->
+<div id="home" style="display:none;">
+
+  <h1>CloudXstrem</h1>
+
+  <p>💰 Coins: <span id="coins">0</span></p>
+  <p>⏱️ Time: <span id="time">0</span> min</p>
+
+  <button onclick="watchAd()">Watch Ad +3</button>
+  <button onclick="buyTime()">Buy Time</button>
+
+  <h2>Game Library</h2>
+
+  <input id="search" placeholder="Search games..." onkeyup="searchGame()">
+
+  <!-- CATEGORIES -->
+  <div>
+    <button onclick="filterGame('all')">All</button>
+    <button onclick="filterGame('action')">Action</button>
+    <button onclick="filterGame('racing')">Racing</button>
+    <button onclick="filterGame('openworld')">Open World</button>
+  </div>
+
+  <div class="games">
+
+    <div class="game-card" data-type="action" data-name="fortnite fps">
+      <img src="https://wallpaperaccess.com/full/3276017.jpg">
+      <h3>Fortnite</h3>
+      <button onclick="playGame()">Play</button>
+    </div>
+
+    <div class="game-card" data-type="openworld" data-name="gta v open world">
+      <img src="https://wallpaperaccess.com/full/719984.jpg">
+      <h3>GTA V</h3>
+      <button onclick="playGame()">Play</button>
+    </div>
+
+    <div class="game-card" data-type="racing" data-name="forza racing">
+      <img src="https://wallpaperaccess.com/full/1349136.jpg">
+      <h3>Forza Horizon</h3>
+      <button onclick="playGame()">Play</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- WALLET -->
+<div id="wallet" style="display:none;">
+  <h2>Wallet</h2>
+  Coins: <span id="coins2">0</span>
+</div>
+
+<!-- PROFILE -->
+<div id="profile" style="display:none;">
+  <h2>Profile</h2>
+  User: <span id="userDisplay">Guest</span>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <button onclick="showScreen('home')">Home</button>
+  <button onclick="showScreen('wallet')">Wallet</button>
+  <button onclick="showScreen('profile')">Profile</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
